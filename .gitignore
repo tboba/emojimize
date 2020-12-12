@@ -1,0 +1,20 @@
+### INTELLIJ FILES ###
+.idea/
+*.iml
+
+### BUILD FILES ###
+.gradle/
+build/
+
+### JAVA FILES ###
+*.class
+*.jar
+
+### LOG FILES ###
+*.log
+hs_err_pid*
+
+### ARCHIVE FILES ###
+*.rar
+*.zip
+*.tar.gz

@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "6.1.0"
+}
+
+jar {
+    manifest {
+        attributes "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
+        attributes "Main-Class": "pl.tymoteuszboba.emojimize.TestClass"
+    }
+}
+
+group 'me.tboba'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:16.0.2'
+    implementation 'com.eclipsesource.minimal-json:minimal-json:0.9.5'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
