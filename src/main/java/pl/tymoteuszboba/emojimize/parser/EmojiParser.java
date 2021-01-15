@@ -4,6 +4,7 @@ import pl.tymoteuszboba.emojimize.api.VendorApi;
 import pl.tymoteuszboba.emojimize.entity.emoji.Emoji;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 public class EmojiParser {
@@ -19,11 +20,10 @@ public class EmojiParser {
                 try {
                     Optional<Emoji> emoji = api.parseEmoji(word);
                     if (emoji.isPresent()) {
-                        originalString = originalString.replace(wordCopy, emoji.get().getUnicode());
+                        originalString = originalString.replace(wordCopy,
+                                new String(emoji.get().getUnicode().getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8));
                     }
-                } catch (IOException ignored) {
-                    ignored.printStackTrace();
-                }
+                } catch (IOException ignored) {}
             }
         }
 

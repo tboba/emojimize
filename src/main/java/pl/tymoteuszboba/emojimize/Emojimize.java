@@ -5,7 +5,7 @@ import pl.tymoteuszboba.emojimize.parser.EmojiParser;
 
 public class Emojimize {
 
-    private VendorApi api;
+    private final VendorApi api;
 
     public Emojimize(VendorApi api) {
         this.api = api;

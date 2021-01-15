@@ -13,6 +13,9 @@ jar {
 group 'me.tboba'
 version '1.0-SNAPSHOT'
 
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
 repositories {
     mavenCentral()
 }
@@ -20,6 +23,7 @@ repositories {
 dependencies {
     implementation 'org.jetbrains:annotations:16.0.2'
     implementation 'com.eclipsesource.minimal-json:minimal-json:0.9.5'
+    implementation 'org.apache.commons:commons-text:1.9'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
@@ -27,6 +31,8 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+compileJava.options.encoding = 'UTF-8'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
