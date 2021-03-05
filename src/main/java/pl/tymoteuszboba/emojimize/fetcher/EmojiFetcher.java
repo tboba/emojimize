@@ -38,7 +38,6 @@ public class EmojiFetcher {
 
              byte[] unicodeBytes = emojiAsObject.get("character").asString().getBytes(StandardCharsets.UTF_8);
 
-             System.out.println(new String(unicodeBytes, StandardCharsets.UTF_8));
              return Optional.of(new Emoji(identifier, new String(unicodeBytes, StandardCharsets.UTF_8)));
          }
     }
