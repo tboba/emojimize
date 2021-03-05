@@ -3,13 +3,6 @@ plugins {
     id "com.github.johnrengelman.shadow" version "6.1.0"
 }
 
-jar {
-    manifest {
-        attributes "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
-        attributes "Main-Class": "pl.tymoteuszboba.emojimize.TestClass"
-    }
-}
-
 group 'me.tboba'
 version '1.0-SNAPSHOT'
 
